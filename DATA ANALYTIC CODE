@@ -1,0 +1,179 @@
+import pandas as pd
+import numpy as np
+import matplotlib as plt
+from matplotlib import pyplot as plt
+def countries_code():
+    print(f"Get user data")
+    Countries_name = input("Input country: ")
+    Countries_cases_non_fatal = float(input("Input number of non fatal cases in this country (in millions): "))
+    Countries_cases_fatal = float(input("Input number of fatal cases in this country (in millions): "))
+    Countries_name1 = input("Input country: ")
+    Countries_cases_non_fatal1 = float(input("Input number of non fatal cases in this country (in millions): "))
+    Countries_cases_fatal1 = float(input("Input number of fatal cases in this country (in millions): "))
+    Countries_name2 = input("Input country: ")
+    Countries_cases_non_fatal2 = float(input("Input number of non fatal cases in this country (in millions): "))
+    Countries_cases_fatal2 = float(input("Input number of fatal cases in this country (in millions): "))
+    Countries_name3 = input("Input country: ")
+    Countries_cases_non_fatal3 = float(input("Input number of non fatal cases in this country (in millions): "))
+    Countries_cases_fatal3 = float(input("Input number of fatal cases in this country (in millions): "))
+    Countries_name4 = input("Input country: ")
+    Countries_cases_non_fatal4 = float(input("Input number of non fatal cases in this country (in millions): "))
+    Countries_cases_fatal4 = float(input("Input number of fatal cases in this country (in millions): "))
+    Countries_name5 = input("Input country: ")
+    Countries_cases_non_fatal5 = float(input("Input number of non fatal cases in this country (in millions): "))
+    Countries_cases_fatal5 = float(input("Input number of fatal cases in this country (in millions): "))
+    cases = pd.DataFrame({
+        'Cases non fatal': [Countries_cases_non_fatal, Countries_cases_non_fatal1, Countries_cases_non_fatal2, Countries_cases_non_fatal3, 
+                            Countries_cases_non_fatal4, Countries_cases_non_fatal5],
+        'Cases fatal': [Countries_cases_fatal, Countries_cases_fatal1,Countries_cases_fatal2, Countries_cases_fatal3, Countries_cases_fatal4, Countries_cases_fatal5] 
+    })
+    cases.index =[
+        Countries_name, Countries_name1, Countries_name2, Countries_name3, Countries_name4, Countries_name5
+    ]
+    print(cases)   
+    
+    countries = [Countries_name, Countries_name1, Countries_name2, Countries_name3, Countries_name4, Countries_name5]
+    fatal = [Countries_cases_fatal, Countries_cases_fatal1,Countries_cases_fatal2, Countries_cases_fatal3, Countries_cases_fatal4, Countries_cases_fatal5]
+    plt.bar(countries, fatal)
+    plt.title('fatal cases in each country')
+    plt.xlabel('countries')
+    plt.ylabel('number of cases')
+    plt.show()
+
+    non_fatal = [Countries_cases_non_fatal, Countries_cases_non_fatal1, Countries_cases_non_fatal2, Countries_cases_non_fatal3, Countries_cases_non_fatal4, Countries_cases_non_fatal5]
+    plt.bar(countries, non_fatal)
+    plt.title('Non Fatal cases in each country')
+    plt.xlabel('Countries')
+    plt.ylabel('number of non fatal cases')
+    plt.show()
+
+    countries_axis = np.arange(len(countries))
+    plt.bar(countries_axis - 0.2, fatal, 0.4, label = 'Fatal') 
+    plt.bar(countries_axis + 0.2, non_fatal, 0.4, label = 'Non-Fatal') 
+    plt.xticks(countries_axis, countries) 
+    plt.xlabel("Countries") 
+    plt.ylabel("Number of cases") 
+    plt.title("Number of cases both fatal and non fatal") 
+    plt.legend() 
+    plt.show() 
+
+    
+
+def age_code():
+    age_group1 = print("How many cases ended up fatal and non fatal in this age group: 0-1 years")
+    age_group1_fatal = float(input("Fatal cases (in millions): "))
+    age_group1_non_fatal = float(input("Non-fatal cases (in millions): "))
+    age_group2 = print("How many cases ended up fatal and non fatal in this age group: 2-4 years")
+    age_group2_fatal = float(input("Fatal cases (in millions): "))
+    age_group2_non_fatal = float(input("Non-fatal cases (in millions): "))
+    age_group3 = print("How many cases ended up fatal and non fatal in this age group: 5-12 years")
+    age_group3_fatal = float(input("Fatal cases (in millions): "))
+    age_group3_non_fatal = float(input("Non-fatal cases (in millions): "))
+    age_group4 = print("How many cases ended up fatal and non fatal in this age group: 13-19 years")
+    age_group4_fatal = float(input("Fatal cases (in millions): "))
+    age_group4_non_fatal = float(input("Non-fatal cases (in millions): "))
+    age_group5 = print("How many cases ended up fatal and non fatal in this age group: 20-39 years")
+    age_group5_fatal = float(input("Fatal cases (in millions): "))
+    age_group5_non_fatal = float(input("Non-fatal cases (in millions): "))
+    age_group6 = print("How many cases ended up fatal and non fatal in this age group: 40-59 years")
+    age_group6_fatal = float(input("Fatal cases (in millions): "))
+    age_group6_non_fatal = float(input("Non-fatal cases (in millions): "))
+    age_group7 = print("How many cases ended up fatal and non fatal in this age group: 60+ years")
+    age_group7_fatal = float(input("Fatal cases (in millions): "))
+    age_group7_non_fatal = float(input("Non-fatal cases (in millions): "))
+    age_cases = pd.DataFrame({
+        'Cases fatal': [age_group1_fatal, age_group2_fatal, age_group3_fatal, age_group4_fatal, age_group5_fatal, age_group6_fatal, 
+                        age_group7_fatal],
+        'Cases non fatal': [age_group1_non_fatal, age_group2_non_fatal, age_group3_non_fatal, age_group4_non_fatal, age_group5_non_fatal, 
+                            age_group6_non_fatal, age_group7_non_fatal]
+    })
+
+    
+    age_cases.index = [
+        "0-1", "2-4", "5-12", "13-19", "20-39", "40-59", "60+"
+    ]
+    print(age_cases)
+    Ages = ["0-1", "2-4", "5-12", "13-19", "20-39", "40-59", "60+"]
+    Fatal = [age_group1_fatal, age_group2_fatal, age_group3_fatal, age_group4_fatal, age_group5_fatal, age_group6_fatal, 
+                        age_group7_fatal]
+    Nonfatal = [age_group1_non_fatal, age_group2_non_fatal, age_group3_non_fatal, age_group4_non_fatal, age_group5_non_fatal, 
+                            age_group6_non_fatal, age_group7_non_fatal]
+    plt.bar(Ages, Fatal)
+    plt.title('Fatal cases by each age')
+    plt.xlabel('Age groups')
+    plt.ylabel('number of cases')
+    plt.show()
+    
+    plt.bar(Ages, Nonfatal)
+    plt.title('Nonfatal cases by each age')
+    plt.xlabel('Age groups')
+    plt.ylabel('number of cases')
+    plt.show()
+
+    Ages_axis = np.arange(len(Ages))
+    plt.bar(Ages_axis - 0.2, Fatal, 0.4, label = 'Fatal') 
+    plt.bar(Ages_axis + 0.2, Nonfatal, 0.4, label = 'Non-Fatal') 
+    plt.xticks(Ages_axis, Ages) 
+    plt.xlabel("Age groups") 
+    plt.ylabel("Number of cases") 
+    plt.title("Number of cases both fatal and non fatal by each age") 
+    plt.legend() 
+    plt.show() 
+    
+
+def gender_code():
+    Male_fatal = float(input("How many cases ended up fatal in men (in millions): "))
+    Male_non_fatal = float(input("How many cases ended up non fatal in men (in millions): "))
+    Female_fatal = float(input("How many cases ended up fatal in women (in millions): "))
+    Female_non_fatal = float(input("How many cases ended up non fatal in women (in millions): "))
+    Nonbinary_fatal = float(input("How many cases ended up fatal in non binary people (in millions): "))
+    Nonbinary_non_fatal = float(input("How many cases ended up non fatal in non binary people (in millions): "))
+
+    Gender_case = pd.DataFrame({
+        'Cases Fatal':[Male_fatal, Female_fatal, Nonbinary_fatal], 
+        'Cases Non Fatal': [Male_non_fatal, Female_non_fatal, Nonbinary_non_fatal]
+    })
+    Gender_case.index = [
+        "Male", "Female", "Nonbinary"
+    ]
+    print(Gender_case)
+    Gender = ["Male", "Female", "Nonbinary"]
+    FFatal = [Male_fatal, Female_fatal, Nonbinary_fatal]
+    nonfatal = [Male_non_fatal, Female_non_fatal, Nonbinary_non_fatal]
+    
+    plt.bar(Gender, FFatal)
+    plt.title('Fatal cases by gender')
+    plt.xlabel('Gender groups')
+    plt.ylabel('number of cases')
+    plt.show()
+    
+    plt.bar(Gender, nonfatal)
+    plt.title('Nonfatal cases by gender')
+    plt.xlabel('Gender groups')
+    plt.ylabel('number of cases')
+    plt.show()
+
+    Gender_axis = np.arange(len(Gender))
+    plt.bar(Gender_axis - 0.2, FFatal, 0.4, label = 'Fatal') 
+    plt.bar(Gender_axis + 0.2, nonfatal, 0.4, label = 'Non-Fatal') 
+    plt.xticks(Gender_axis, Gender) 
+    plt.xlabel("Gender groups") 
+    plt.ylabel("Number of cases") 
+    plt.title("Number of cases both fatal and non fatal by gender") 
+    plt.legend() 
+    plt.show() 
+    
+def run_code():
+    print("\nOptions:")
+    print("1. Countries")
+    print("2. Age")
+    print("3. Gender")
+    Choice = input("Choose one of the choices presented above: ")
+    if Choice == 'Countries':
+        countries_code()
+    if Choice == 'Age':
+        age_code()
+    if Choice == 'Gender':
+        gender_code()
+    if not Choice == ['Age', 'Countries', 'Gender']:
+        print("PLEASE INPUT CORRECT OPTION. TO RERUN THE PROGRAM PRESS SHIFT AND ENTER TO CONTINUE")
