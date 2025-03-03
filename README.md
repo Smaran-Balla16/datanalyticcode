@@ -1,2 +1,3 @@
 # datanalyticcode
-This code will analyze number of cases which eneded up fatal and non fatal and gives the option to compare within GENDER, AGE, and COUNTRY
+DECRIPTION: This code will analyze number of cases which eneded up fatal and non fatal and gives the option to compare within GENDER, AGE, and COUNTRY. You can use this code to make visualizing data easier by having it in graphs an d comparitive graphs. 
+WHAT IS NEEDED: 3.6 version of python or higher is necessary, a software to run python (for example jupyter notebook), some libraries need to be installed which can be done by inputing "pip install 'library name' " which will download the library. To run the code after downloading and importing all the libraries type on a empty cell teh following command term "main()". This will run the code. To open jupyter notebook go to your terminal and type "jupyter notebook" which will open jupyternotbook on a local host and you can copy the code into a cell. 
